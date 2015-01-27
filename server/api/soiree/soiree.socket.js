@@ -16,7 +16,9 @@ exports.register = function(socket) {
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('soiree:save', doc);
+  Soiree.populate(doc, {path:'created_by', select: 'name'}, function(err, soiree) {
+    socket.emit('soiree:save', soiree);
+  });
 }
 
 function onRemove(socket, doc, cb) {

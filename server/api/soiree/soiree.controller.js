@@ -5,7 +5,7 @@ var Soiree = require('./soiree.model');
 
 // Get list of soirees
 exports.index = function(req, res) {
-  Soiree.find(function (err, soirees) {
+  Soiree.loadRecent(function (err, soirees) {
     if(err) { return handleError(res, err); }
     return res.json(200, soirees);
   });
@@ -22,7 +22,11 @@ exports.show = function(req, res) {
 
 // Creates a new soiree in the DB.
 exports.create = function(req, res) {
-  Soiree.create(req.body, function(err, soiree) {
+  // don't include the date, if a user specified it
+  delete req.body.date;
+
+  var soiree = new Soiree(_.merge({ created_by: req.user._id }, req.body));
+  soiree.save(function(err, soiree) {
     if(err) { return handleError(res, err); }
     return res.json(201, soiree);
   });
