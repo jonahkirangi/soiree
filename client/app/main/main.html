@@ -1,5 +1,17 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="col-md-12">
-  This is the main view.
+<div class="container">
+
+  <form class="soiree-form" ng-submit="addSoiree()" name="soireeForm">
+    <textarea class="form-control" ng-model="newSoiree" rows="3" placeholder="Enter a new soiree" required></textarea>
+    <input class="btn btn-primary" type="submit" ng-disabled="soireeForm.$invalid" value="Post">
+  </form>
+
+  <ul class="soiree-list">
+    <li ng-repeat="soiree in soirees">
+      <header>{{ soiree.created_by.name }}</header>
+      <p>{{ soiree.description }}</p>
+    </li>
+  </ul>
+
 </div>
