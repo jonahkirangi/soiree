@@ -28,7 +28,7 @@ angular.module('soireeApp')
 
     // Use our REST api to post a new soiree
     $scope.addSoiree = function() {
-      $http.post('/api/soirees', { content: $scope.newSoiree });
+      $http.post('/api/soirees', { description: $scope.newSoiree });
       $scope.newSoiree = '';
     };
   });
