@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/soiree-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
