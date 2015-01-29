@@ -3,14 +3,25 @@
 <div class="container">
 
   <form class="soiree-form" ng-submit="addSoiree()" name="soireeForm">
-    <textarea class="form-control" ng-model="newSoiree" rows="3" placeholder="Enter a new soiree" required></textarea>
+    <textarea class="form-control" ng-model="soiree_name" rows="1" placeholder="Title" required></textarea>
+    <textarea class="form-control" ng-model="date" rows="1" placeholder="Date" required></textarea>
+    <textarea class="form-control" ng-model="location" rows="1" placeholder="Location" required></textarea>
+    <textarea class="form-control" ng-model="description" rows="5" placeholder="Description" required></textarea>
+
     <input class="btn btn-primary" type="submit" ng-disabled="soireeForm.$invalid" value="Post">
   </form>
 
   <ul class="soiree-list">
     <li ng-repeat="soiree in soirees">
-      <header>{{ soiree.created_by.name }}</header>
-      <p>{{ soiree.description }}</p>
+      <p>
+        <span>Posted by: {{ soiree.created_by.name }}</span><br>
+        <span>Soiree Name: {{ soiree.soiree_name }}</span><br>
+        <span>Soiree Date: {{ soiree.date }}</span><br>
+        <span>Location: {{ soiree.location }}</span><br>
+        <span>Description: {{ soiree.description }}</span><br>
+
+        <button class="btn btn-primary" ng-submit="deleteSoiree()">Delete</button>
+      </p>
     </li>
   </ul>
 

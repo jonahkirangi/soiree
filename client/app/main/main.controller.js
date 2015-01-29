@@ -2,7 +2,10 @@
 
 angular.module('soireeApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.newSoiree = '';
+    $scope.soiree_name = '';
+    $scope.date = '';
+    $scope.location = '';
+    $scope.description = '';
 
     // Grab the initial set of available soirees
     $http.get('/api/soirees').success(function(soirees) {
@@ -28,7 +31,23 @@ angular.module('soireeApp')
 
     // Use our REST API to post a new soiree
     $scope.addSoiree = function() {
-      $http.post('/api/soirees', { description: $scope.newSoiree });
-      $scope.newSoiree = '';
+      $http.post('/api/soirees', {
+        soiree_name: $scope.soiree_name,
+        date: $scope.date,
+        location: $scope.location,
+        description: $scope.description,
+      });
+
+      $scope.soiree_name = '';
+      $scope.date = '';
+      $scope.location = '';
+      $scope.description = '';
+    };
+
+    // Use out REST API to delete existing soirees
+    $scope.deleteSoiree = function() {
+      $http.delete('/api/soirees', {
+
+      });
     };
   });
