@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var SoireeSchema = new Schema({
-  soiree_name: String,
+  title: String,
   description: String,
-  date: String,
+  soireeDate: String,
   start_time: String,
   location: String,
   attending: [],
