@@ -11,18 +11,15 @@
     <input class="btn btn-primary" type="submit" ng-disabled="soireeForm.$invalid" value="Post">
   </form>
 
-  <ul class="soiree-list">
-    <li ng-repeat="soiree in soirees">
-      <p>
-        <span>Posted by: {{ soiree.created_by.name }}</span><br>
-        <span>Soiree Name: {{ soiree.title }}</span><br>
-        <span>Location: {{ soiree.location }}</span><br>
-        <span>Description: {{ soiree.description }}</span><br>
-        <span>Date: {{ soiree.soireeDate }}</span><br>
+  <div class="soiree-list">
+    <div ng-repeat="soiree in soirees">
+      <span>Posted by: {{ soiree.created_by.name }}</span><br>
+      <span>Soiree Name: {{ soiree.title }}</span><br>
+      <span>Location: {{ soiree.location }}</span><br>
+      <span>Description: {{ soiree.description }}</span><br>
+      <span>Date: {{ soiree.soireeDate }}</span><br>
 
-        <button class="btn btn-primary" ng-submit="deleteSoiree()">Delete</button>
-      </p>
-    </li>
-  </ul>
+      <button class="btn btn-primary" ng-submit="deleteSoiree()">Delete</button>
+  </div>
 
 </div>
