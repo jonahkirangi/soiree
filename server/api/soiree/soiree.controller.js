@@ -22,9 +22,6 @@ exports.show = function(req, res) {
 
 // Creates a new soiree in the DB.
 exports.create = function(req, res) {
-  // don't include the date, if a user specified it
-  delete req.body.date;
-
   var soiree = new Soiree(_.merge({ created_by: req.user._id }, req.body));
   soiree.save(function(err, soiree) {
     if(err) { return handleError(res, err); }

@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var SoireeSchema = new Schema({
   title: String,
   description: String,
-  soireeDate: String,
+  date: String,
   start_time: String,
   location: String,
   attending: [],

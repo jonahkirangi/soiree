@@ -4,7 +4,7 @@
 
   <form class="soiree-form" ng-submit="addSoiree()" name="soireeForm">
     <textarea class="form-control" ng-model="title" rows="1" placeholder="Title" required></textarea>
-    <textarea class="form-control" ng-model="soireeDate" rows="1" placeholder="Date" required></textarea>
+    <textarea class="form-control" ng-model="date" rows="1" placeholder="Date" required></textarea>
     <textarea class="form-control" ng-model="location" rows="1" placeholder="Location" required></textarea>
     <textarea class="form-control" ng-model="description" rows="5" placeholder="Description" required></textarea>
 
@@ -17,7 +17,7 @@
       <span>Soiree Name: {{ soiree.title }}</span><br>
       <span>Location: {{ soiree.location }}</span><br>
       <span>Description: {{ soiree.description }}</span><br>
-      <span>Date: {{ soiree.soireeDate }}</span><br>
+      <span>Date: {{ soiree.date }}</span><br>
 
       <button class="btn btn-primary" ng-submit="deleteSoiree()">Delete</button>
     </div>

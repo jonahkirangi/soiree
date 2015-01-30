@@ -5,7 +5,7 @@ angular.module('soireeApp')
     $scope.title = '';
     $scope.location = '';
     $scope.description = '';
-    $scope.soireeDate = '';
+    $scope.date = '';
 
     // Grab the initial set of available soirees
     $http.get('/api/soirees').success(function(soirees) {
@@ -35,13 +35,13 @@ angular.module('soireeApp')
         title: $scope.title,
         location: $scope.location,
         description: $scope.description,
-        soireeDate: $scope.soireeDate,
+        date: $scope.date,
       });
 
       $scope.title = '';
       $scope.location = '';
       $scope.description = '';
-      $scope.soireeDate = '';
+      $scope.date = '';
     };
 
     // Use out REST API to delete existing soirees
