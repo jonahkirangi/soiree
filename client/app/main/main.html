@@ -12,7 +12,7 @@
   </form>
 
   <div class="soiree-list">
-    <div ng-repeat="soiree in soirees">
+    <div class="soiree-event" ng-repeat="soiree in soirees">
       <span>Posted by: {{ soiree.created_by.name }}</span><br>
       <span>Soiree Name: {{ soiree.title }}</span><br>
       <span>Location: {{ soiree.location }}</span><br>
@@ -20,6 +20,7 @@
       <span>Date: {{ soiree.soireeDate }}</span><br>
 
       <button class="btn btn-primary" ng-submit="deleteSoiree()">Delete</button>
+    </div>
   </div>
 
 </div>
