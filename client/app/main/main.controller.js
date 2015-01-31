@@ -45,9 +45,7 @@ angular.module('soireeApp')
     };
 
     // Use out REST API to delete existing soirees
-    $scope.deleteSoiree = function() {
-      $http.delete('/api/soirees', {
-
-      });
+    $scope.deleteSoiree = function(id) {
+      $http.delete('/api/soirees/' + id);
     };
   });
