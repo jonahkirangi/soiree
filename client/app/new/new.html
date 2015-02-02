@@ -1,3 +1,23 @@
-<div class="col-md-12">
-This is the new view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <form class="soiree-form" ng-submit="addSoiree()" name="soireeForm">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <textarea class="form-control" ng-model="title" rows="1" placeholder="Title" required></textarea>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <textarea class="form-control" ng-model="date" rows="1" placeholder="Date" required></textarea>
+      </div>
+    </div>
+
+    <div>
+      <textarea class="form-control" ng-model="location" rows="1" placeholder="Location" required></textarea>
+    </div>
+    <div>
+      <textarea class="form-control" ng-model="description" rows="5" placeholder="Description" required></textarea>
+    </div>
+
+    <input class="btn btn-primary" type="submit" ng-disabled="soireeForm.$invalid" value="Post">
+  </form>
 </div>

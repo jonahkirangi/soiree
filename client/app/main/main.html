@@ -1,31 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <section>
-    <form class="soiree-form" ng-submit="addSoiree()" name="soireeForm">
-
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <textarea class="form-control" ng-model="title" rows="1" placeholder="Title" required></textarea>
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <textarea class="form-control" ng-model="date" rows="1" placeholder="Date" required></textarea>
-        </div>
-      </div>
-
-
-      <div>
-        <textarea class="form-control" ng-model="location" rows="1" placeholder="Location" required></textarea>
-      </div>
-
-      <div>
-        <textarea class="form-control" ng-model="description" rows="5" placeholder="Description" required></textarea>
-      </div>
-
-      <input class="btn btn-primary" type="submit" ng-disabled="soireeForm.$invalid" value="Post">
-    </form>
-  </section>
-
   <div class="soiree-list">
     <div class="soiree-event" ng-repeat="soiree in soirees">
       <span>Posted by: {{ soiree.created_by.name }}</span><br>
@@ -37,5 +12,4 @@
       <button class="btn btn-primary" ng-click="deleteSoiree(soiree._id)">Delete</button>
     </div>
   </div>
-
 </div>
