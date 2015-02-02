@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('soireeApp')
-  .controller('NewCtrl', function ($scope, $http) {
+  .controller('NewCtrl', function ($scope, $location, $http) {
     $scope.title = '';
     $scope.location = '';
     $scope.description = '';
@@ -20,5 +20,7 @@ angular.module('soireeApp')
       $scope.location = '';
       $scope.description = '';
       $scope.date = '';
+
+      $location.path('/');
     };
   });
