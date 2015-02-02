@@ -1,6 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
+  <div id="newbutton">
+    <a class="btn btn-primary" href="/new" role="button">New Soiree</a>
+  </div>
+</div>
+
+<div class="container">
   <div class="soiree-list">
     <div class="soiree-event" ng-repeat="soiree in soirees">
       <span>Posted by: {{ soiree.created_by.name }}</span><br>
